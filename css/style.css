@@ -1,0 +1,65 @@
+/* GENERAL STYLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Rubik', sans-serif;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  padding:
+}
+
+/* HEADER */
+.header {
+  padding: 20px;
+}
+
+.header .logo {
+  font-family: 'Acme', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: dodgerblue;
+}
+
+.search {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px 0;
+  color: #fff;
+  background: dodgerblue;
+}
+
+/* MAIN */
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-grow: 1;
+  background-color: lightgrey;
+}
+
+.icons .icon {
+  flex-basis: calc(100% / 6 - 20px);
+  text-align: center;
+  margin: 20px 10px;
+  padding: 20px 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.icon i {
+  font-size: 35px;
+}
+
+.icon .title {
+  text-transform: uppercase;
+  margin-top: 15px;
+}
