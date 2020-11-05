@@ -121,7 +121,7 @@ const colors = [
    const coloredIcons = colorIcons(icons, colors);
    printIcons(coloredIcons, container);
 
-   //3. Itero le icone per typo
+   //3. Itero e filtro le icone per typo
    const select = $('#type');
    const types = getType(icons);
 
@@ -149,17 +149,19 @@ const colors = [
 function printIcons(icons, container) {
 
   //Per pulire lo schermo, il reset, prime delle iterazioni e al cambio select.
-  
+  container.html('');
 
   //Per ogni iterazione pesco all elemento  attuale i valori tra parentesi.
   icons.forEach((element) => {
       const {family, prefix, name, color} = element;
 
+      const colorIcon = (color === undefined) ? '#000' : color;
+
       //Definisco ciò che andrò a iniettare nel document
       const html =
       `<div class="icon">
         <i class="${family} ${prefix}${name}"
-        style="color: ${color}"></i>
+        style="color: ${colorIcon}"></i>
         <div class="title">${name}</div>
       </div>`;
 
@@ -212,7 +214,7 @@ function getType(icons) {
 function genOption(types, select) {
 
   types.forEach((element) => {
-    select.append(`<option value="${element} ">${element}</option>`)
+    select.append(`<option value="${element}">${element}</option>`)
   });
 }
 
